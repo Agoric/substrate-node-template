@@ -91,8 +91,8 @@ pub mod opaque {
 
 /// This runtime version.
 pub const VERSION: RuntimeVersion = RuntimeVersion {
-	spec_name: ver_str!("template-node"),
-	impl_name: ver_str!("template-node"),
+	spec_name: ver_str!("agoric-template-node"),
+	impl_name: ver_str!("agoric-template-node"),
 	authoring_version: 1,
 	spec_version: 1,
 	impl_version: 0,

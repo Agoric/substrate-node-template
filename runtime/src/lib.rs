@@ -36,7 +36,9 @@ use primitives::AuthorityId;
 use runtime_primitives::{ApplyResult, transaction_validity::TransactionValidity,
 	Ed25519Signature, generic, traits::{self, BlakeTwo256, Block as BlockT}
 };
-use runtime_api::{runtime::*, id::*};
+//use runtime_api::{runtime::*, id::*};
+use runtime_api::runtime::{Core, Metadata, BlockBuilder, TaggedTransactionQueue};
+use runtime_api::id::{BLOCK_BUILDER, TAGGED_TRANSACTION_QUEUE, METADATA};
 use version::RuntimeVersion;
 #[cfg(feature = "std")]
 use version::NativeVersion;

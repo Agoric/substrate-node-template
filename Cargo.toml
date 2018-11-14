@@ -20,15 +20,15 @@ hex-literal = "0.1"
 slog = "^2"
 parity-codec = { version = "2.1" }
 trie-root = { git = "https://github.com/paritytech/trie" }
-sr-io = { git = "https://github.com/paritytech/substrate" }
-sr-primitives = { git = "https://github.com/paritytech/substrate" }
-substrate-cli = { git = "https://github.com/paritytech/substrate" }
-substrate-primitives = { git = "https://github.com/paritytech/substrate" }
-substrate-executor = { git = "https://github.com/paritytech/substrate" }
-substrate-service = { git = "https://github.com/paritytech/substrate" }
-substrate-transaction-pool = { git = "https://github.com/paritytech/substrate" }
-substrate-network = { git = "https://github.com/paritytech/substrate" }
-substrate-consensus-aura = { git = "https://github.com/paritytech/substrate" }
+sr-io = { git = "https://github.com/paritytech/substrate" , rev="d3c0b50" }
+sr-primitives = { git = "https://github.com/paritytech/substrate" , rev="d3c0b50" }
+substrate-cli = { git = "https://github.com/paritytech/substrate" , rev="d3c0b50" }
+substrate-primitives = { git = "https://github.com/paritytech/substrate" , rev="d3c0b50" }
+substrate-executor = { git = "https://github.com/paritytech/substrate" , rev="d3c0b50" }
+substrate-service = { git = "https://github.com/paritytech/substrate" , rev="d3c0b50" }
+substrate-transaction-pool = { git = "https://github.com/paritytech/substrate" , rev="d3c0b50" }
+substrate-network = { git = "https://github.com/paritytech/substrate" , rev="d3c0b50" }
+substrate-consensus-aura = { git = "https://github.com/paritytech/substrate" , rev="d3c0b50" }
 template-node-runtime = { path = "runtime" }
 
 [build-dependencies]

@@ -53,6 +53,8 @@ pub use runtime_primitives::{Permill, Perbill};
 pub use timestamp::BlockPeriod;
 pub use srml_support::{StorageValue, RuntimeMetadata};
 
+mod vat;
+
 /// Alias to Ed25519 pubkey that identifies an account on the chain.
 pub type AccountId = primitives::H256;
 
@@ -94,7 +96,7 @@ pub const VERSION: RuntimeVersion = RuntimeVersion {
 	spec_name: ver_str!("agoric-template-node"),
 	impl_name: ver_str!("agoric-template-node"),
 	authoring_version: 1,
-	spec_version: 1,
+	spec_version: 2,
 	impl_version: 0,
 	apis: apis_vec!([
 		(BLOCK_BUILDER, 1),
@@ -172,6 +174,9 @@ impl upgrade_key::Trait for Runtime {
 	type Event = Event;
 }
 
+impl vat::Trait for Runtime {
+}
+
 construct_runtime!(
 	pub enum Runtime with Log(InternalLog: DigestItem<Hash, AuthorityId>) where
 		Block = Block,
@@ -182,6 +187,7 @@ construct_runtime!(
 		Consensus: consensus::{Module, Call, Storage, Config<T>, Log(AuthoritiesChange), Inherent},
 		Balances: balances,
 		UpgradeKey: upgrade_key,
+		Vat: vat::{Module, Call, Storage, Config<T>},
 	}
 );
 

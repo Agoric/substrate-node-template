@@ -1,5 +1,5 @@
 use primitives::{AuthorityId, ed25519};
-use template_node_runtime::{AccountId, GenesisConfig, ConsensusConfig, TimestampConfig, BalancesConfig, UpgradeKeyConfig};
+use template_node_runtime::{AccountId, GenesisConfig, ConsensusConfig, TimestampConfig, BalancesConfig, VatConfig, UpgradeKeyConfig};
 use substrate_service;
 
 // Note this is the URL for the telemetry server
@@ -89,6 +89,10 @@ fn testnet_genesis(initial_authorities: Vec<AuthorityId>, endowed_accounts: Vec<
 			creation_fee: 0,
 			reclaim_rebate: 0,
 			balances: endowed_accounts.iter().map(|&k|(k, (1 << 60))).collect(),
+		}),
+		vat: Some(VatConfig {
+			vatCounter: 0,
+			unused: 0,
 		}),
 		upgrade_key: Some(UpgradeKeyConfig {
 			key: upgrade_key,
